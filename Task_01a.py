@@ -6,16 +6,16 @@
 # calculate_total(4.5, 3) -> 13.5
 
 def calculate_total(price, quantity):
-    # Write your code here
-    pass
+        # Write your code here
+        if price < 0 or quantity < 0:
+            raise ValueError("Please input a number that ISNT negative.")
+        return price * quantity
 
-
-def main():
-    price = float(input("Enter price: "))
-    quantity = int(input("Enter quantity: "))
-    total = calculate_total(price, quantity)
-    print(total)
-
-
-if __name__ == "__main__":
-    main()
+def main(): 
+    try:
+          price = float(input("Enter price: "))
+          quantity = int(input("Enter quantity: "))
+          total = calculate_total(price, quantity)
+          print(total)
+    except ValueError as v:
+          print(f'Invalid input: {v}')
